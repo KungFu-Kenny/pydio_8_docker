@@ -1,0 +1,21 @@
+version: '3'
+services:
+
+  pydio:
+    container_name: pydio
+    build: .
+    restart: always
+    tty: true
+    ports: 
+      - 2345:80
+    links:
+      - db 
+      
+  db:
+    image: mariadb
+    restart: always
+    container_name: database
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: pydio
+
