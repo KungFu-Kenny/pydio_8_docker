@@ -1,0 +1,56 @@
+#----------------------------------------------------------------
+
+#set the base image
+FROM ubuntu:latest
+ENV PYDIO_VERSION 8.0.2
+
+
+#update ubuntu
+RUN apt-get update 
+
+#install utils
+RUN apt-get install tar
+RUN apt-get intall git
+RUN apt-get install curl
+RUN apt-get install wget
+RUN apt-get install net-tools
+
+#----------------------------------------------------------------
+
+#install apache2,php7  and mods
+RUN apt-get install -y apache2 php php-mcrypt php-intl php-gd php-mysql php-mbstring php-dom libapache2-mod-php 
+
+#define the ENV variable
+
+# enable virtualhost conf
+
+#----------------------------------------------------------------
+
+#configure apache2
+RUN a2dissite 000-default.conf
+RUN a2ensite pydio.conf
+RUN a2enmod rewrite
+
+RUN service apache2 restart
+
+#----------------------------------------------------------------
+
+RUN rm -f /etc/apache2/apache2.conf
+
+#----------------------------------------------------------------
+
+#configure output_buffering and such
+
+#----------------------------------------------------------------
+
+#Install Pydio
+
+#----------------------------------------------------------------
+
+#expose ports
+EXPOSE 80
+EXPOSE 443
+
+#----------------------------------------------------------------
+
+#expose volumes
