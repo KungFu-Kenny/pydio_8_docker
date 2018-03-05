@@ -2,6 +2,7 @@ version: '3'
 services:
 
   pydio:
+    image : pydio-test
     container_name: pydio
     build: .
     restart: always
@@ -10,7 +11,9 @@ services:
       - 2345:80
     links:
       - db 
-      
+    volumes:
+      - /Users:/var/www/pydio/data/files/
+      - /Users:/var/www/pydio/data/conf/  
   db:
     image: mariadb
     restart: always
@@ -18,4 +21,4 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: example
       MYSQL_DATABASE: pydio
-
+      

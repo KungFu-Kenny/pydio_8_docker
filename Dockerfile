@@ -14,7 +14,8 @@ RUN apt update -y
 
 RUN apt install -y \
 tar supervisor wget openssl \
-apache2 php php-mcrypt php-intl php-gd php-mysql php-mbstring php-dom libapache2-mod-php php-cli php-pecl-memcache php-pecl-apc
+apache2 php php-mcrypt php-intl php-gd php-mysql php-mbstring php-dom libapache2-mod-php \
+php-cli
 
 
 #----------------------------------------------------------------
@@ -74,6 +75,12 @@ RUN sed -i -e "s/post_max_size\s*=\s*8M/post_max_size = 10G/g" /etc/php/7.0/cli/
 
 #----------------------------------------------------------------
 
+#Pydio booster
+
+ADD pydio-boost-conf /home/pydioconf
+ADD pydio-boost-caddy /home/pydiocaddy
+ADD pydiobooster /home/pydiobooster
+RUN chmod +x /home/pydiobooster
 
 
 #----------------------------------------------------------------
