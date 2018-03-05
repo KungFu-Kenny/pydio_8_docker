@@ -96,8 +96,8 @@ EXPOSE 443
 
 VOLUME [ "/var/www/pydio/data/files/" ]
 VOLUME [ "/var/www/pydio/data/personal/" ]
-VOLUME [ "/var/lib/mysql" ]
-VOLUME [ "/var/www/pydio/conf" ]
+#VOLUME [ "/var/lib/mysql" ]
+#VOLUME [ "/var/www/pydio/conf" ]
 
 #----------------------------------------------------------------
 

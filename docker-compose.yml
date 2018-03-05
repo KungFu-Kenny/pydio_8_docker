@@ -12,8 +12,8 @@ services:
     links:
       - db 
     volumes:
-      - /Users:/var/www/pydio/data/files/
-      - /Users:/var/www/pydio/data/conf/  
+      - /Users/thabet/desktop/test:/var/www/pydio/data/files/
+      - /Users/thabet/desktop/test:/var/www/pydio/data/conf/
   db:
     image: mariadb
     restart: always
