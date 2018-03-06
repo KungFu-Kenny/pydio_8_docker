@@ -1,4 +1,4 @@
-# test
+# requirements
 to use this docker you must have installed :
 - [docker-compose](https://docs.docker.com/compose/install/)
 - [docker(depends on your system)](https://docs.docker.com/install/)
@@ -9,20 +9,21 @@ this docker-compose contains :
 - mariadb (database)
 - pydio (a debian based pydio install containing everything and ready to use)
 
-So basically to resume all of this when you use docker-compose it will launch and link all the containers with the same network
+So basically you will get all of this when you use docker-compose it will launch and link all the containers with to the same network.
 
 
-#setup
-to launch 
-docker-compose up -d
+# setup
+first and foremost you must be in the same folder that contains the docker-compose.yml file,
+then to launch & use it you can use this command : 
+`docker-compose up -d` the `-d` parameter is added to launch it detached.
 
-after it finishes use http://localhost:2345
 
+after it finishes up go to this address http://localhost:2345 ( you can change the port in the docker-compose.yml it will be like this `2345`:80 you can change the `2345`part )
 
-setup with integrated database
-     databse hostname : database
-          databasename: pydio
-          databaseuser: root
-      databasepassword: example
+you will have the pydio installation page you can choose your admin login and password then when you'll have to enter the database informations you can either use the integrated one with the following parameters
+(you can the password in the docker-compose.yml file and you can also create a user)
 
-HNC8EytvPDpferlgOeN1SgDC:vVdfdwLDtmJY4EArcDUeJAJU
+     - hostname : database
+     - name: pydio
+     - user: root
+     - password: example
