@@ -17,10 +17,12 @@ services:
   db:
     image: mariadb
     restart: always
-    container_name: database-test
+    container_name: database
     environment:
       MYSQL_ROOT_PASSWORD: example
       MYSQL_DATABASE: pydio
+    volumes:
+      - mysqldata:/var/lib/mysql  
       
   adminer:
     image: adminer
@@ -35,3 +37,5 @@ services:
     container_name: redis
     ports:
       - 6379:6379 
+    volumes:
+      - redisdata:/data  

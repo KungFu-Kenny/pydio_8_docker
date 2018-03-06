@@ -23,7 +23,12 @@ after it finishes up go to this address http://localhost:2345 ( you can change t
 you will have the pydio installation page you can choose your admin login and password then when you'll have to enter the database informations you can either use the integrated one with the following parameters
 (you can the password in the docker-compose.yml file and you can also create a user)
 
-     - hostname : database
+     - hostname : database ( can be changed in docker-compose.yml file `container_name:`)
      - name: pydio
      - user: root
-     - password: example
+     - password: example ( can be changed in docker-compose.yml file)
+
+
+...
+...
+...
