@@ -17,8 +17,21 @@ services:
   db:
     image: mariadb
     restart: always
-    container_name: database
+    container_name: database-test
     environment:
       MYSQL_ROOT_PASSWORD: example
       MYSQL_DATABASE: pydio
       
+  adminer:
+    image: adminer
+    restart: always
+    container_name: phpminiadmin
+    ports:
+      - 8080:8080      
+
+  redis:
+    image: redis
+    restart: always
+    container_name: redis
+    ports:
+      - 6379:6379 

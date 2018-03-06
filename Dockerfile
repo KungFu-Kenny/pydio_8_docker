@@ -14,8 +14,8 @@ RUN apt update -y
 
 RUN apt install -y \
 tar supervisor wget openssl \
-apache2 php php-mcrypt php-intl php-gd php-mysql php-mbstring php-dom libapache2-mod-php \
-php-cli
+apache2 php php-mcrypt php-intl php-gd php-mysql php-mbstring php-dom libapache2-mod-php php-cli  \
+php-memcache php-memcached php-apcu php-imap php-ldap php-opcache php-cli php-xml php-enchant php-redis php-doctrine-cache
 
 
 #----------------------------------------------------------------
@@ -70,8 +70,8 @@ RUN sed -i -e "s/output_buffering\s*=\s*4096/output_buffering = Off/g" /etc/php/
 
 #upload php
 
-RUN sed -i -e "s/upload_max_filesize\s*=\s*2M/upload_max_filesize = 8G/g" /etc/php/7.0/cli/php.ini
-RUN sed -i -e "s/post_max_size\s*=\s*8M/post_max_size = 10G/g" /etc/php/7.0/cli/php.ini
+RUN sed -i -e "s/upload_max_filesize\s*=\s*2M/upload_max_filesize = 4G/g" /etc/php/7.0/cli/php.ini
+RUN sed -i -e "s/post_max_size\s*=\s*8M/post_max_size = 5G/g" /etc/php/7.0/cli/php.ini
 
 #----------------------------------------------------------------
 
@@ -81,7 +81,7 @@ ADD pydio-boost-conf /home/pydioconf
 ADD pydio-boost-caddy /home/pydiocaddy
 ADD pydiobooster /home/pydiobooster
 RUN chmod +x /home/pydiobooster
-
+#RUN /home/pydiobooster -conf /home/pydioconf
 
 #----------------------------------------------------------------
 
