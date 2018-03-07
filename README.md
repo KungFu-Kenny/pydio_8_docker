@@ -1,5 +1,5 @@
 # requirements
-to use this docker you must have installed :
+to use this docker-compose you must have installed :
 - [docker-compose](https://docs.docker.com/compose/install/)
 - [docker(depends on your system)](https://docs.docker.com/install/)
 
