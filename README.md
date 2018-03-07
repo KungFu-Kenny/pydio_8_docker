@@ -9,7 +9,7 @@ this docker-compose contains :
 - mariadb (database)
 - pydio (a debian based pydio install containing everything and ready to use)
 
-So basically you will get all of this when you use docker-compose it will launch and link all the containers with to the same network.
+So basically you will get all of this when you use docker-compose it will launch and link all the containers to the same network.
 
 
 # setup
