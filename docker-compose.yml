@@ -12,14 +12,14 @@ services:
     links:
       - db
     volumes:
-      - /Users/thabet/desktop/test/files:/var/www/pydio/data/files/
-      - /Users/thabet/desktop/test/personal:/var/www/pydio/data/personal
+      - pydiofiles:/var/www/pydio/data/files/
+      - pydiopersonal:/var/www/pydio/data/personal
   db:
     image: mariadb
     restart: always
     container_name: database
     environment:
-      MYSQL_ROOT_PASSWORD: example
+      MYSQL_ROOT_PASSWORD: pydio
       MYSQL_DATABASE: pydio
     volumes:
       - mysqldata:/var/lib/mysql
@@ -43,3 +43,5 @@ services:
 volumes:
   redisdata:
   mysqldata:
+  pydiopersonal:
+  pydiofiles:
