@@ -7,10 +7,10 @@ services:
     build: .
     restart: always
     tty: true
-    ports: 
+    ports:
       - 2345:80
     links:
-      - db 
+      - db
     volumes:
       - /Users/thabet/desktop/test/files:/var/www/pydio/data/files/
       - /Users/thabet/desktop/test/personal:/var/www/pydio/data/personal
@@ -22,20 +22,24 @@ services:
       MYSQL_ROOT_PASSWORD: example
       MYSQL_DATABASE: pydio
     volumes:
-      - mysqldata:/var/lib/mysql  
-      
+      - mysqldata:/var/lib/mysql
+
   adminer:
     image: adminer
     restart: always
     container_name: phpminiadmin
     ports:
-      - 8080:8080      
+      - 8080:8080
 
   redis:
     image: redis
     restart: always
     container_name: redis
     ports:
-      - 6379:6379 
+      - 6379:6379
     volumes:
-      - redisdata:/data  
+      - redisdata:/data
+
+volumes:
+  redisdata:
+  mysqldata:
