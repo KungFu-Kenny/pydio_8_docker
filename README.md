@@ -14,7 +14,7 @@ So basically you will get all of this when you use docker-compose it will launch
 
 # setup
 first and foremost you must be in the same folder that contains the docker-compose.yml file,
-then to launch & use it you can use this command : 
+then to launch & use it you can use this command :
 `docker-compose up -d` the `-d` parameter is added to launch it detached.
 
 
@@ -26,7 +26,7 @@ you will have the pydio installation page you can choose your admin login and pa
      - hostname : database ( can be changed in docker-compose.yml file `container_name:`)
      - name: pydio
      - user: root
-     - password: example ( can be changed in docker-compose.yml file)
+     - password: pydio ( can be changed in docker-compose.yml file)
 
 
 ...
