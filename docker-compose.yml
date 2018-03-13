@@ -9,6 +9,7 @@ services:
     tty: true
     ports:
       - 2345:80
+      - 6789:443
     links:
       - db
     volumes:
