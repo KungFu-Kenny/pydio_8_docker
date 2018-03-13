@@ -2,9 +2,8 @@ version: '3'
 services:
 
   pydio:
-    image : pydio-test
+    image : zayn/pydio-community
     container_name: pydio
-    build: .
     restart: always
     tty: true
     ports:
