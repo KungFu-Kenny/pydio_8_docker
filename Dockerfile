@@ -60,13 +60,14 @@ ADD apache2-supervisor.conf /etc/supervisor/conf.d/apache2.conf
 #----------------------------------------------------------------
 
 #enable SSL conf
+
 RUN a2enmod ssl
 RUN mkdir /etc/apache2/ssl
 RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/apache2/ssl/apache.key -out /etc/apache2/ssl/apache.crt -subj "/C=FR/ST=FR/L=FR/O=FR/CN=your-pydio.com"
 RUN a2ensite pydio-ssl.conf
 
-
 #----------------------------------------------------------------
+
 #configure apache2
 
 RUN a2dissite 000-default.conf
@@ -80,7 +81,6 @@ RUN service apache2 restart
 #configure output_buffering and such
 
 RUN sed -i -e "s/output_buffering\s*=\s*4096/output_buffering = Off/g" /etc/php/7.0/cli/php.ini
-
 RUN sed -i -e "s/output_buffering\s*=\s*4096/output_buffering = Off/g" /etc/php/7.0/apache2/php.ini
 
 
@@ -96,10 +96,11 @@ RUN sed -i -e "s/post_max_size\s*=\s*8M/post_max_size = 5G/g" /etc/php/7.0/apach
 
 #Pydio booster
 
-ADD pydio-boost-conf /home/pydioconf
-ADD pydio-boost-caddy /home/pydiocaddy
-ADD pydiobooster /home/pydiobooster
-RUN chmod +x /home/pydiobooster
+RUN mkdir /home/booster
+ADD pydio-boost-conf /home/booster/pydioconf
+ADD pydio-boost-caddy /home/booster/pydiocaddy
+ADD pydiobooster /home/booster/pydiobooster
+RUN chmod +x /home/booster/pydiobooster
 #RUN /home/pydiobooster -conf /home/pydioconf
 
 #----------------------------------------------------------------
@@ -115,7 +116,7 @@ EXPOSE 443
 
 VOLUME [ "/var/www/pydio/data/files/" ]
 VOLUME [ "/var/www/pydio/data/personal/" ]
-#VOLUME [ "/var/www/pydio/conf" ]
+VOLUME [ "/var/www/pydio/conf" ]
 
 #----------------------------------------------------------------
 

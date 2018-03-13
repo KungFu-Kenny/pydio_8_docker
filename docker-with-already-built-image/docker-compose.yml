@@ -1,0 +1,48 @@
+version: '3'
+services:
+
+  pydio:
+    image : pydio-test
+    container_name: pydio
+    build: .
+    restart: always
+    tty: true
+    ports:
+      - 2345:80
+      - 6789:443
+    links:
+      - db
+    volumes:
+      - pydiofiles:/var/www/pydio/data/files/
+      - pydiopersonal:/var/www/pydio/data/personal
+  db:
+    image: mariadb
+    restart: always
+    container_name: database
+    environment:
+      MYSQL_ROOT_PASSWORD: pydio
+      MYSQL_DATABASE: pydio
+    volumes:
+      - mysqldata:/var/lib/mysql
+
+  adminer:
+    image: adminer
+    restart: always
+    container_name: phpminiadmin
+    ports:
+      - 8080:8080
+
+  redis:
+    image: redis
+    restart: always
+    container_name: redis
+    ports:
+      - 6379:6379
+    volumes:
+      - redisdata:/data
+
+volumes:
+  redisdata:
+  mysqldata:
+  pydiopersonal:
+  pydiofiles:
