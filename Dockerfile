@@ -16,7 +16,7 @@ RUN apt install -y \
 tar supervisor wget openssl zip \
 apache2 php php-mcrypt php-intl php-gd php-mysql php-mbstring php-dom libapache2-mod-php php-cli  \
 php-memcache php-memcached php-apcu php-imap php-ldap php-opcache php-cli php-xml php-enchant php-redis php-doctrine-cache \
-smbclient php-ssh2 clamav clamav-daemon imagemagick
+smbclient php-ssh2 clamav clamav-daemon imagemagick unoconv
 
 
 #----------------------------------------------------------------
