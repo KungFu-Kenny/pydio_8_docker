@@ -41,6 +41,7 @@ You can also setup the mail using postfix (it's easy), you can follow [this guid
 I advise you to create a mail that you'll use for Pydio.
 
 # advanced configurations
+
 1.SSL only
 there's both protocols by default but you can (and i would advise you if you wanna use it on a larger scale) also force it to only use https( you just need to disable the regular virtual host file using `a2dissite pydio.conf`).
 
@@ -48,7 +49,9 @@ there's both protocols by default but you can (and i would advise you if you wan
 There's a self signed certificate but if you want to use another type of certificate you can modify them (you can find them in this directory `/etc/apache2/ssl`you will find both the .crt & .key files)
 
 3.Change where docker stores data
-By default it's using Docker's local Volumes but you can modify it to use your local storage (or server) what you have to do is modify the left part that is limited by `:` to where you want it to be stored and and the end of the files where the volumes are declared you will have to declared it here's the [official docker-compose volumes](https://docs.docker.com/compose/compose-file/#volumes) doc that explains how it works
+By default it's using Docker's local Volumes but you can modify it to use your local storage (or server) what you have to do is modify the left part that is limited by `:` to where you want it to be stored and and the end of the files where the volumes are declared you will have to declared it here's the [official docker-compose volumes](https://docs.docker.com/compose/compose-file/#volumes) doc that explains how it works.
+
+
 
 
 
