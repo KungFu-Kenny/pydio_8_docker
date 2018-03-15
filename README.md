@@ -3,7 +3,7 @@ to use this docker-compose you must have installed :
 - [docker-compose](https://docs.docker.com/compose/install/)
 - [docker](https://docs.docker.com/install/)
 
-# quick read
+# quick reading
 this docker-compose contains :
 - adminer (lightweight PHPMYADMIN)
 - redis (cache storage system)
@@ -15,9 +15,10 @@ So basically you will get all of what is listed above when using docker-compose 
 
 # setup
 first and foremost
-clone this `https://github.com/KungFu-Kenny/test.git`
-then navigate in this folder now to launch & use it you can use this command :
-`docker-compose up -d` the `-d` parameter is added to launch it detached.
+clone this repository either you can grab it above with the green **Clone or Download** or `https://github.com/KungFu-Kenny/test.git`
+then navigate into this folder.
+Now to launch & use your Dockerized Pydio use this command :
+`docker-compose up -d` the `-d` parameter is added to launch it detached (if you wanna keep track you can remove the `-d`).
 
 
 after it finishes up go to this address http://localhost:2345 ( you can change the port in the docker-compose.yml it will be look this **2345**:80 you can change the **2345** part )
