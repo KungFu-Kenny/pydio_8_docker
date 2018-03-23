@@ -31,7 +31,6 @@ smbclient php-ssh2 clamav clamav-daemon imagemagick
 #----------------------------------------------------------------
 
 
-
 #----------------------------------------------------------------
 
 #Install Pydio
@@ -102,6 +101,19 @@ ADD pydio-boost-caddy /home/booster/pydiocaddy
 ADD pydiobooster /home/booster/pydiobooster
 RUN chmod +x /home/booster/pydiobooster
 #RUN /home/pydiobooster -conf /home/pydioconf
+
+#----------------------------------------------------------------
+
+#pluploader
+
+WORKDIR /var/www/pydio/plugins/uploader.plupload/
+RUN wget https://github.com/moxiecode/plupload/archive/v3.1.2.zip
+RUN unzip v3.1.2.zip
+RUN rm -rf v3.1.2.zip
+RUN mv -r plupload-3.1.2/js plupload-3.1.2/plupload
+RUN cp -r plupload-3.1.2/plupload .
+RUN rm -rf plupload-3.1.2
+
 
 #----------------------------------------------------------------
 
