@@ -44,43 +44,9 @@ services:
     volumes:
       - redisdata:/data
 
- elasticsearch:
-    image: elasticsearch:5$
-    container_name: elasticsearch
-    hostname: elasticsearch
-    environment:
-      - cluster.name=docker-cluster
-      - bootstrap.memory_lock=true
-      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
-    ulimits:
-      memlock:
-        soft: -1
-        hard: -1
-    volumes:
-      - esdata1:/usr/share/elasticsearch/data
-    ports:
-      - 9200:9200
-  
-  elasticsearch2:
-    image: elasticsearch:5$
-    hostname: elasticsearch2
-    container_name: elasticsearch2
-    environment:
-      - cluster.name=docker-cluster
-      - bootstrap.memory_lock=true
-      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
-      - "discovery.zen.ping.unicast.hosts=elasticsearch"
-    ulimits:
-      memlock:
-        soft: -1
-        hard: -1
-    volumes:
-      - esdata2:/usr/share/elasticsearch/data
 
 volumes:
   redisdata:
   mysqldata:
   pydiopersonal:
   pydiofiles:
-  esdata1:
-  esdata2:
