@@ -15,7 +15,7 @@ So basically you will get all of what is listed above when using docker-compose 
 
 # setup
 first and foremost
-clone this repository either you can grab it above with the green **Clone or Download** or `https://github.com/KungFu-Kenny/test.git`
+clone this repository either you can grab it above with the green button **Clone or Download** or `https://github.com/KungFu-Kenny/test.git`
 then navigate into this folder.
 Now to launch & use your Dockerized Pydio use this command :
 `docker-compose up -d` the `-d` parameter is added to launch it detached (if you wanna keep track you can remove the `-d`).
