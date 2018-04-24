@@ -33,7 +33,7 @@ you will have the pydio installation page you can choose your admin login and pa
      - password: pydio ( can be changed in docker-compose.yml file)
 
 
-there's Pydio booster already you can find in it /home/booster in it you just need to change some values in both `pydioconf`and `pydiocaddy`files
+there's Pydio booster already preaperd in it, you can find it in `/home/booster` then you just need to change some values in both `pydioconf`and `pydiocaddy`files
 such as the tokens.
 
 
