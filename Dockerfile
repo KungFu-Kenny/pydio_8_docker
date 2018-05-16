@@ -2,7 +2,7 @@
 
 #set the base image
 
-FROM debian
+FROM ubuntu:latest
 ENV PYDIO_VERSION 8.0.2
 
 
