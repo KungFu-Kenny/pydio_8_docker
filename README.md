@@ -18,8 +18,8 @@ first and foremost
 clone this repository you can either grab it above with the green button **Clone or Download** or `https://github.com/KungFu-Kenny/test.git`
 then navigate into this folder.
 Now to launch & use your Dockerized Pydio use this command :
-`docker-compose up -d` the `-d` parameter is added to launch it detached (if you wanna keep track you can remove the `-d`).
-
+`docker-compose -p pydio_8 up -d` the `-d` parameter is added to launch it detached (if you wanna keep track you can remove the `-d`).
+`-p` is to get the same project name for volumes, networks etc...
 
 after it finishes up go to this address http://localhost:2345 ( you can change the port in the docker-compose.yml it will look like this **2345**:80 you can change the **2345** part )
 for secure access you can go to https://localhost:6789 ( it will be mapped to port 443 you can change it aswell)
