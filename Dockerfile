@@ -2,7 +2,7 @@
 
 #set the base image
 
-FROM ubuntu:latest
+FROM ubuntu:artful
 ENV PYDIO_VERSION 8.0.2
 
 

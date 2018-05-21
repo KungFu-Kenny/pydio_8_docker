@@ -12,14 +12,14 @@ services:
       - 2345:80
       - 6789:443
     links:
-      - db
+      - database
     volumes:
       - pydiofiles:/var/www/pydio/data/files/
       - pydiopersonal:/var/www/pydio/data/personal
-  db:
-    image: mariadb
+  database:
+    image: mariadb:latest
     restart: always
-    hostname: mariadb
+    hostname: database
     container_name: database
     environment:
       MYSQL_ROOT_PASSWORD: pydio
@@ -34,19 +34,7 @@ services:
     ports:
       - 8080:8080
 
-  redis:
-    image: redis
-    hostname: redis
-    restart: always
-    container_name: redis
-    ports:
-      - 6379:6379
-    volumes:
-      - redisdata:/data
-
-
 volumes:
-  redisdata:
   mysqldata:
   pydiopersonal:
   pydiofiles:
