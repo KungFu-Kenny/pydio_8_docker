@@ -37,7 +37,7 @@ smbclient php-ssh2 clamav clamav-daemon imagemagick unoconv
 #Install Pydio
 
 WORKDIR /var/www
-RUN wget "https://download.pydio.com/pub/core/archives/pydio-core-8.0.2.tar.gz"
+RUN wget "https://download.pydio.com/pub/core/archives/pydio-core-${PYDIO_VERSION}.tar.gz"
 RUN tar -xzf pydio-core-${PYDIO_VERSION}.tar.gz
 RUN rm -f pydio-core-${PYDIO_VERSION}.tar.gz
 RUN mv pydio-core-${PYDIO_VERSION} pydio
