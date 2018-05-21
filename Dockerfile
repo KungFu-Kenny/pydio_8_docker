@@ -53,18 +53,12 @@ RUN chmod -R 777 /var/www/pydio/data/personal/
 
 RUN rm -f /etc/apache2/apache2.conf
 ADD apache2.conf /etc/apache2/apache2.conf
-ADD pydio-ssl.conf /etc/apache2/sites-available/pydio-ssl.conf
+
 ADD pydio.conf /etc/apache2/sites-available/pydio.conf
 ADD apache2-supervisor.conf /etc/supervisor/conf.d/apache2.conf
 
 #----------------------------------------------------------------
 
-#enable SSL conf
-
-RUN a2enmod ssl
-RUN mkdir /etc/apache2/ssl
-RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/apache2/ssl/apache.key -out /etc/apache2/ssl/apache.crt -subj "/C=FR/ST=FR/L=FR/O=FR/CN=your-pydio.com"
-RUN a2ensite pydio-ssl.conf
 
 #----------------------------------------------------------------
 
@@ -108,7 +102,6 @@ RUN chmod +x /home/booster/pydiobooster
 #expose ports
 
 EXPOSE 80
-EXPOSE 443
 
 #----------------------------------------------------------------
 
