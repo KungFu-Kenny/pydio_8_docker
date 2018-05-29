@@ -3,7 +3,7 @@
 #set the base image
 
 FROM debian
-ENV PYDIO_VERSION 8.0.2
+ENV PYDIO_VERSION 8.2.0
 
 
 #update
@@ -15,7 +15,7 @@ RUN apt update -y
 RUN apt install -y \
 tar supervisor wget openssl zip \
 apache2 php php-mcrypt php-intl php-gd php-mysql php-mbstring php-dom libapache2-mod-php php-cli  \
-php-memcache php-memcached php-apcu php-imap php-ldap php-opcache php-cli php-xml php-enchant php-redis php-doctrine-cache \
+php-memcache php-memcached php-apcu php-imap php-ldap php-opcache php-enchant php-redis php-doctrine-cache \
 smbclient php-ssh2 clamav clamav-daemon imagemagick
 
 
